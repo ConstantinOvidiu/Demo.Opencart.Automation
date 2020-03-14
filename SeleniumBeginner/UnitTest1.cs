@@ -1,6 +1,4 @@
-﻿using System;
-using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium.Chrome;
 
 namespace SeleniumBeginner
@@ -24,8 +22,6 @@ namespace SeleniumBeginner
             var existaAbi = text.Contains("Abi Talent și conflictul cu Alex Velea - ce i-a transmis");
 
             Assert.IsTrue(existaAbi);
-
-            Thread.Sleep(6000);  //set the time before quit
 
             browser.Quit();
                           
