@@ -25,9 +25,6 @@ namespace SeleniumBeginner
 
             Assert.IsTrue(existaAbi);
 
-            //browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(50);
-
-
             Thread.Sleep(6000);  //set the time before quit
 
             browser.Quit();
