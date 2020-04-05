@@ -5,34 +5,19 @@ using OpenQA.Selenium.Chrome;
 
 namespace OpencartPages
 {
-    [TestClass]
-    public class UnitTest1
+    [TestClass]  //MS Test tag
+    public class TestingHomePage 
     {
-        private ChromeDriver browser;
+        private ChromeDriver browser;   //declaram driverul ca private si variabila browser
 
-        [ClassInitialize]
-        public static void ClassInitialize(TestContext context)
-        {
-            //TODO Login before starting test methods
 
-            //LoginPage loginPage = new LoginPage(browser);
-            //loginPage.Login();
-
-        }
-
-        [ClassCleanup]
-        public static void ClasCleanUp()
-        {
-
-        }
-
-        [TestInitialize]
+        [TestInitialize]  //MS Test tag initialize
         public void TestInit()
         {
             //Open browser instance
             browser = new ChromeDriver();
 
-            //Open IMDB page
+            //Open page
             browser.Navigate().GoToUrl("https://demo.opencart.com/");
 
             //Implicit wait
@@ -46,7 +31,9 @@ namespace OpencartPages
             browser.Quit();
         }
 
-        [TestMethod]
+        
+
+        [TestMethod]    
         public void VerifySearchForASpecificItem()
         {
             HomePage homePage = new HomePage(browser);

@@ -59,8 +59,9 @@
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\SearchResultsPage.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="TestingHomePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestingLoginPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

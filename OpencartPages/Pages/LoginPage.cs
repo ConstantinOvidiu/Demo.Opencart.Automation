@@ -10,31 +10,35 @@ namespace OpencartPages.Pages
 {
     public class LoginPage
     {
-        public LoginPage(IWebDriver browser)
+        public LoginPage(IWebDriver browser)  //LoginPage constructor
         {
             PageFactory.InitElements(browser, this);
         }
 
-        [FindsBy(How = How.CssSelector, Using = "")]
-        private IWebElement txtUserName { get; set; }
+        [FindsBy(How = How.Name, Using = "email")]
+        private IWebElement txtEmail { get; set; }
 
 
-        [FindsBy(How = How.CssSelector, Using = "")]
+        [FindsBy(How = How.Name, Using = "password")]
         private IWebElement txtPassword { get; set; }
 
-        [FindsBy(How = How.CssSelector, Using = "")]
+
+        [FindsBy(How = How.CssSelector, Using = "input.btn.btn-primary")]
         private IWebElement btnLogin { get; set; }
+
+        [FindsBy(How = How.ClassName, Using = "alert")]
+        public IWebElement txtErrorMessage { get; set; }
 
         public void Login()
         {
-            txtUserName.SendKeys(" nume user plm");
-            txtPassword.SendKeys(" parola plm");
+            txtEmail.SendKeys("ovidiu.chiruta@gmail.com");
+            txtPassword.SendKeys("Parolanoua1234");
             btnLogin.Click();
         }
 
         public void Login(string username, string password)
         {
-            txtUserName.SendKeys(username);
+            txtEmail.SendKeys(username);
             txtPassword.SendKeys(password);
             btnLogin.Click();
         }

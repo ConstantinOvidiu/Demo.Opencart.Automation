@@ -15,11 +15,30 @@ namespace OpencartPages.Pages
             PageFactory.InitElements(browser, this);
         }
 
+        [FindsBy(How = How.CssSelector, Using = "i.fa.fa-user")]
+        private IWebElement btnMyAccount { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "My Account")]
+        public IWebElement linkMyAccount { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "Login")]
+        private IWebElement btnLogin { get; set; }
+
         [FindsBy(How = How.Name, Using = "search")]
         private IWebElement searchInput { get; set; }
 
         [FindsBy(How = How.CssSelector, Using = "button.btn.btn-default.btn-lg")]
         private IWebElement btnSearch { get; set; }
+
+        public void ClickOnMyAccount()
+        {
+            btnMyAccount.Click();
+        }
+
+        public void GoToLogin()
+        {
+            btnLogin.Click();
+        }
 
         public void SearchForItem(string text)
         {
