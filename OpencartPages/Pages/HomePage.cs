@@ -16,7 +16,7 @@ namespace OpencartPages.Pages
         }
 
         [FindsBy(How = How.CssSelector, Using = "i.fa.fa-user")]
-        private IWebElement btnMyAccount { get; set; }
+        public IWebElement btnMyAccount { get; set; }
 
         [FindsBy(How = How.LinkText, Using = "My Account")]
         public IWebElement linkMyAccount { get; set; }

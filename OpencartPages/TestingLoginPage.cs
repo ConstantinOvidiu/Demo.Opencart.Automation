@@ -57,11 +57,10 @@ namespace OpencartPages
 
 
         [TestMethod]
-        public void VerifyIncorrectEmailMsg()
+        public void VerifyIncorrectEmailMsg() 
         {
             LoginPage loginPage = new LoginPage(browser);
             loginPage.Login("ovidiu.chirutza@gmail.com", "Parolanoua1234");
-
 
             var returnedError = loginPage.txtErrorMessage.Text;
             Assert.AreEqual(returnedError, "Warning: No match for E-Mail Address and/or Password.");
