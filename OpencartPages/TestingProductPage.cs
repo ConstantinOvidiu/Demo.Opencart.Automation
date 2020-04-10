@@ -49,7 +49,7 @@ namespace OpencartPages
 
             //Assert Price in Euro
 
-            var isMyPriceInEuro = productPage.txtPriceInEuro.Displayed;
+            var isMyPriceInEuro = productPage.txtPriceInEuro.Text.Contains("€");  //to find about characters 
 
             Assert.IsTrue(isMyPriceInEuro);
 

@@ -34,12 +34,6 @@ namespace OpencartPages.Pages
         public IWebElement txtPriceInEuro { get; set; }
 
 
-        public void Login()
-        {
-            searchInput.SendKeys("iPhone");
-            btnSearch.Click();
-        }
-
         public void SearchForItem(string text)
         {
             searchInput.SendKeys(text);

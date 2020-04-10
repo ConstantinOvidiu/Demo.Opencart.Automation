@@ -26,8 +26,10 @@ namespace OpencartPages.Pages
         [FindsBy(How = How.CssSelector, Using = "input.btn.btn-primary")]
         private IWebElement btnLogin { get; set; }
 
+
         [FindsBy(How = How.ClassName, Using = "alert")]
         public IWebElement txtErrorMessage { get; set; }
+
 
         public void Login()
         {

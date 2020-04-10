@@ -6,11 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+///TODO
 namespace OpencartPages.Pages
 {
     public class HomePage
     {
-        public HomePage(IWebDriver browser)                 //the HomePage class Constructor
+        public HomePage(IWebDriver browser)                //the HomePage class Constructor
         {
             PageFactory.InitElements(browser, this);
         }
