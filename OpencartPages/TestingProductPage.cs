@@ -49,9 +49,28 @@ namespace OpencartPages
 
             //Assert Price in Euro
 
-            var isMyPriceInEuro = productPage.txtPriceInEuro.Text.Contains("€");  //to find about characters 
+            var isMyPriceInEuro = productPage.txtPrice.Text.Contains("€");  //to find about characters 
 
             Assert.IsTrue(isMyPriceInEuro);
+
+        }
+
+        [TestMethod]
+        public void VerifyCurrencyPound()
+        {
+
+            ProductPage productPage = new ProductPage(browser);
+            productPage.SearchForItem("iPhone");
+
+            productPage.productResultClick();
+            productPage.CurrencyClick();
+            productPage.PoundClick();
+
+            //Assert Price in Pounds
+
+            var isMyPriceInPounds = productPage.txtPrice.Text.Contains("£");  //to find about characters 
+
+            Assert.IsTrue(isMyPriceInPounds);
 
         }
     }

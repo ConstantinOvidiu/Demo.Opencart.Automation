@@ -30,8 +30,11 @@ namespace OpencartPages.Pages
         [FindsBy(How = How.Name, Using = "EUR")]
         public IWebElement linkEuro { get; set; }
 
+        [FindsBy(How = How.Name, Using = "GBP")]
+        public IWebElement linkPound { get; set; }
+
         [FindsBy(How = How.CssSelector, Using = ".list-unstyled li h2")]
-        public IWebElement txtPriceInEuro { get; set; }
+        public IWebElement txtPrice { get; set; }   
 
 
         public void SearchForItem(string text)
@@ -53,6 +56,11 @@ namespace OpencartPages.Pages
         public void EuroClick()
         {
             linkEuro.Click();
+        }
+
+        public void PoundClick()
+        {
+            linkPound.Click();
         }
     }
 }
