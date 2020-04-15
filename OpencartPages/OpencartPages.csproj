@@ -58,11 +58,13 @@
   <ItemGroup>
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
+    <Compile Include="Pages\NavbarPages.cs" />
     <Compile Include="Pages\ProductPage.cs" />
     <Compile Include="Pages\SearchResultsPage.cs" />
     <Compile Include="TestingHomePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestingLoginPage.cs" />
+    <Compile Include="TestingNavbarPages.cs" />
     <Compile Include="TestingProductPage.cs" />
   </ItemGroup>
   <ItemGroup>
