@@ -13,7 +13,7 @@ namespace OpencartPages
     public class TestingLoginPage
     {
         private ChromeDriver browser;   //declaram driverul ca private si variabila browser
-        private HomePage newHomepage;   
+        private HomePage newHomepage;
 
         [TestInitialize]  //MS Test tag initialize
         public void TestInit()
@@ -45,7 +45,7 @@ namespace OpencartPages
         //TestMethods
 
         [TestMethod]
-        public void VerifySuccessfullyLogin() 
+        public void VerifySuccessfullyLogin()
         {
             LoginPage loginPage = new LoginPage(browser);
             loginPage.Login();
@@ -57,7 +57,7 @@ namespace OpencartPages
 
 
         [TestMethod]
-        public void VerifyIncorrectEmailMsg() 
+        public void VerifyIncorrectEmailMsg()
         {
             LoginPage loginPage = new LoginPage(browser);
             loginPage.Login("ovidiu.chirutza@gmail.com", "Parolanoua1234");

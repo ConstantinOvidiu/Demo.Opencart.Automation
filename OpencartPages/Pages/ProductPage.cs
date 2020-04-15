@@ -10,7 +10,7 @@ namespace OpencartPages.Pages
 {
     public class ProductPage
     {
-        public ProductPage(IWebDriver browser)  //LoginPage constructor
+        public ProductPage(IWebDriver browser)  //ProductPage constructor
         {
             PageFactory.InitElements(browser, this);
         }
@@ -28,7 +28,7 @@ namespace OpencartPages.Pages
 
         //Currency elements
         [FindsBy(How = How.Id, Using = "form-currency")]
-        public IWebElement linkCurrency { get; set; } 
+        public IWebElement linkCurrency { get; set; }
 
         [FindsBy(How = How.Name, Using = "EUR")]
         public IWebElement linkEuro { get; set; }
@@ -42,7 +42,7 @@ namespace OpencartPages.Pages
         //Review Form elements
         [FindsBy(How = How.LinkText, Using = "Reviews (0)")]
         public IWebElement linkTabReview { get; set; }
-        
+
         [FindsBy(How = How.CssSelector, Using = ".form-group .col-sm-12 #input-name")]
         public IWebElement nameInput { get; set; }
 
@@ -56,7 +56,7 @@ namespace OpencartPages.Pages
         public IWebElement btnReview { get; set; }
 
         [FindsBy(How = How.CssSelector, Using = "#form-review .alert-success")]
-        public IWebElement successAlert { get; set; } 
+        public IWebElement successAlert { get; set; }
 
         [FindsBy(How = How.CssSelector, Using = "#form-review .alert-danger")]
         public IWebElement failAlert { get; set; }
@@ -65,7 +65,7 @@ namespace OpencartPages.Pages
         public IWebElement nameAlert { get; set; }
 
         [FindsBy(How = How.CssSelector, Using = "#form-review .alert-danger")]
-        public IWebElement charactersAlert { get; set; } 
+        public IWebElement charactersAlert { get; set; }
 
 
 
@@ -102,21 +102,21 @@ namespace OpencartPages.Pages
             linkTabReview.Click();
         }
 
-        public void WriteName(string text) 
+        public void WriteName(string text)
         {
             nameInput.SendKeys(text);
-           
+
         }
 
         public void WriteReview(string text)
         {
-            reviewInput.SendKeys(text); 
+            reviewInput.SendKeys(text);
         }
 
-        public void GiveRating() 
+        public void GiveRating()
         {
             ratingInput.Click();
-        } 
+        }
 
         public void clickReviewButton()
         {

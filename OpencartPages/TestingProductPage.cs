@@ -25,7 +25,7 @@ namespace OpencartPages
 
             //Implicit wait
             browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-            
+
         }
 
         [TestCleanup]
@@ -62,7 +62,7 @@ namespace OpencartPages
             ProductPage productPage = new ProductPage(browser);
             productPage.SearchForItem("iPhone");
 
-            productPage.productResultClick(); 
+            productPage.productResultClick();
             productPage.CurrencyClick();
             productPage.PoundClick();
 
@@ -70,7 +70,7 @@ namespace OpencartPages
 
             var isMyPriceInPounds = productPage.txtPrice.Text.Contains("£");  //to find about characters 
 
-            Assert.IsTrue(isMyPriceInPounds); 
+            Assert.IsTrue(isMyPriceInPounds);
 
         }
 
@@ -81,11 +81,11 @@ namespace OpencartPages
             //to check " Thank you for your review. It has been submitted to the webmaster for approval."
             ProductPage productPage = new ProductPage(browser);
             productPage.SearchForItem("iPhone");
-            
+
 
             productPage.productResultClick();
             productPage.TabReviewClick();
-            productPage.WriteName("AslamAshishRmabadKumar"); 
+            productPage.WriteName("AslamAshishRmabadKumar");
             productPage.WriteReview("Very good product. I recommend");
             productPage.GiveRating();
             productPage.clickReviewButton();
@@ -97,7 +97,7 @@ namespace OpencartPages
         }
 
         [TestMethod]
-        public void WriteInvalidReviewRaiting()  
+        public void WriteInvalidReviewRaiting()
         {
             //Very good product.I recommend
             //to check "Please select a review rating!"
@@ -118,7 +118,7 @@ namespace OpencartPages
         }
 
         [TestMethod]
-        public void WriteInvalidReviewName() 
+        public void WriteInvalidReviewName()
         {
             //Very good product.I recommend
             //to check "Please select a review rating!"
@@ -132,7 +132,7 @@ namespace OpencartPages
             productPage.GiveRating();
             productPage.clickReviewButton();
 
-            var reviewName = productPage.nameAlert.Text;  
+            var reviewName = productPage.nameAlert.Text;
 
             Assert.AreEqual(reviewName, "Warning: Review Name must be between 3 and 25 characters!");
 
@@ -154,10 +154,9 @@ namespace OpencartPages
             productPage.GiveRating();
             productPage.clickReviewButton();
 
-            var reviewCharacters = productPage.charactersAlert.Text; 
+            var reviewCharacters = productPage.charactersAlert.Text;
 
             Assert.AreEqual(reviewCharacters, "Warning: Review Text must be between 25 and 1000 characters!");
-
         }
     }
 }

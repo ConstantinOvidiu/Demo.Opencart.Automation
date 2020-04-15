@@ -6,7 +6,7 @@ using OpenQA.Selenium.Chrome;
 namespace OpencartPages
 {
     [TestClass]  //MS Test tag
-    public class TestingHomePage 
+    public class TestingHomePage
     {
         private ChromeDriver browser;   //declaram driverul ca private si variabila browser
 
@@ -31,9 +31,9 @@ namespace OpencartPages
             browser.Quit();
         }
 
-        
 
-        [TestMethod]    
+
+        [TestMethod]
         public void VerifySearchForASpecificItem()
         {
             HomePage homePage = new HomePage(browser);
@@ -47,6 +47,7 @@ namespace OpencartPages
 
             Assert.AreEqual(returnedItemTitle, searchText);
         }
+         
 
         [TestMethod]
         public void VerifyMessageWhenNoItemsAreReturned()
@@ -59,6 +60,29 @@ namespace OpencartPages
             var returnedMessage = searchResultsPage.txtNoItemsReturned.Text;
 
             Assert.AreEqual(returnedMessage, "There is no product that matches the search criteria.");
+        }
+
+
+        [TestMethod]
+        public void VerifyLinkLogo()
+        {
+            HomePage homePage = new HomePage(browser);
+            homePage.ClickOnlinkMacBook();
+            homePage.ClickOnLogo();
+
+            var backToHomePageCheck = homePage.txtFeatured.Text;
+            Assert.AreEqual(backToHomePageCheck, "Featured");
+        }
+
+
+        [TestMethod]
+        public void VerifEmptyCart() 
+        {
+            HomePage homePage = new HomePage(browser);
+            homePage.ClickOnEmptyCart();
+           
+            var emptyCartMsg = homePage.txtEmptyCart.Text;
+            Assert.AreEqual(emptyCartMsg, "Your shopping cart is empty!");
         }
     }
 }

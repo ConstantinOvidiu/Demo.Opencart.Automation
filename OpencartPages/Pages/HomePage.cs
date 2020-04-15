@@ -31,6 +31,21 @@ namespace OpencartPages.Pages
         [FindsBy(How = How.CssSelector, Using = "button.btn.btn-default.btn-lg")]
         private IWebElement btnSearch { get; set; }
 
+        [FindsBy(How = How.LinkText, Using = "MacBook")]
+        public IWebElement linkMacBook { get; set; }
+
+        [FindsBy(How = How.Id, Using = "logo")]
+        public IWebElement linkLogo { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "#content h3")]
+        public IWebElement txtFeatured { get; set; }
+
+        [FindsBy(How = How.Id, Using = "cart")]
+        public IWebElement btnCart { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "#cart ul li .text-center")]
+        public IWebElement txtEmptyCart { get; set; }
+
         public void ClickOnMyAccount()
         {
             btnMyAccount.Click();
@@ -45,6 +60,21 @@ namespace OpencartPages.Pages
         {
             searchInput.SendKeys(text);
             btnSearch.Click();
+        }
+
+        public void ClickOnlinkMacBook()
+        {
+            linkMacBook.Click();
+        }
+
+        public void ClickOnLogo()
+        {
+            linkLogo.Click();
+        }
+
+        public void ClickOnEmptyCart()
+        {
+            btnCart.Click();
         }
     }
 }
