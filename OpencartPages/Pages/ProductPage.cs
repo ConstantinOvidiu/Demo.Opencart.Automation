@@ -8,16 +8,13 @@ using System.Threading.Tasks;
 
 namespace OpencartPages.Pages
 {
-    public class ProductPage
+    public class ProductPage: GenericPage
     {
         public ProductPage(IWebDriver browser)  //ProductPage constructor
         {
             PageFactory.InitElements(browser, this);
         }
 
-        //Search Input/Button elements
-        [FindsBy(How = How.Name, Using = "search")]
-        private IWebElement searchInput { get; set; }
 
         [FindsBy(How = How.CssSelector, Using = "button.btn.btn-default.btn-lg")]
         private IWebElement btnSearch { get; set; }
@@ -68,12 +65,6 @@ namespace OpencartPages.Pages
         public IWebElement charactersAlert { get; set; }
 
 
-
-        public void SearchForItem(string text)
-        {
-            searchInput.SendKeys(text);
-            btnSearch.Click();
-        }
 
         public void productResultClick()
         {

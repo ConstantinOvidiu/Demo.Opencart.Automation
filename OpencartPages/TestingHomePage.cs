@@ -32,7 +32,6 @@ namespace OpencartPages
         }
 
 
-
         [TestMethod]
         public void VerifySearchForASpecificItem()
         {
@@ -63,7 +62,7 @@ namespace OpencartPages
         }
 
 
-        [TestMethod]
+        [TestMethod] 
         public void VerifyLinkLogo()
         {
             HomePage homePage = new HomePage(browser);
