@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace OpencartPages
@@ -25,7 +26,6 @@ namespace OpencartPages
 
             //Implicit wait
             browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-
         }
 
         [TestCleanup]
@@ -157,6 +157,53 @@ namespace OpencartPages
             var reviewCharacters = productPage.charactersAlert.Text;
 
             Assert.AreEqual(reviewCharacters, "Warning: Review Text must be between 25 and 1000 characters!");
+        }
+
+        [TestMethod] 
+        public void AddSimpleProdToCart()
+        {
+            ProductPage productPage = new ProductPage(browser);
+            productPage.ClickOnComponents();
+            productPage.ClickOnMonitors();
+            productPage.ClickOnSamsungMonitor(); 
+            productPage.ClickAddToCart();
+            productPage.ClickOnYourCart();
+
+            var checkMonitorsProdTitle = productPage.txtMonitorsSamsungTitle.Text;  //txtMonitorsSamsungTitle
+
+            Assert.AreEqual(checkMonitorsProdTitle, "Samsung SyncMaster 941BW");
+        }
+
+        [TestMethod]
+        public void AddProductToCartFormCompletionRequired() 
+        {
+            browser.Navigate().GoToUrl("http://opencart.abstracta.us/");
+
+            ProductPage productPage = new ProductPage(browser);
+            productPage.ClickOnComponents();
+            productPage.ClickOnMonitors();
+            productPage.ClickOnAppleMonitor();
+
+            //Select Available Options 
+            //Dimension Choices
+            productPage.FillForm();
+
+            try
+            {         
+                Thread.Sleep(2000); 
+                browser.SwitchTo().Alert().Accept();
+            } catch { } 
+                
+            
+
+            productPage.ClickAddToCart();
+
+            
+            var msgProductSuccessfullyAdded = productPage.successAlertProdAdded.Text;
+
+            Assert.AreEqual(msgProductSuccessfullyAdded, "Success: You have added Apple Cinema 30\" to your shopping cart!");
+
+
         }
     }
 }

@@ -70,7 +70,7 @@ namespace OpencartPages
             navbarPages.ClickOnComponents();
             navbarPages.ClickOnMonitors();
 
-            var checkMonitorsProdTitle = navbarPages.txtMonitorsProdTitle.Text;
+            var checkMonitorsProdTitle = navbarPages.txtMonitorsSamsungTitle.Text;
 
             Assert.AreEqual(checkMonitorsProdTitle, "Samsung SyncMaster 941BW");
         }

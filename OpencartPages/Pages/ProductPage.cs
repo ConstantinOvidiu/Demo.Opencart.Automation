@@ -16,9 +16,6 @@ namespace OpencartPages.Pages
         }
 
 
-        [FindsBy(How = How.CssSelector, Using = "button.btn.btn-default.btn-lg")]
-        private IWebElement btnSearch { get; set; }
-
         //Product Thumb elements
         [FindsBy(How = How.ClassName, Using = "product-thumb")]
         public IWebElement productResult { get; set; }
@@ -63,6 +60,29 @@ namespace OpencartPages.Pages
 
         [FindsBy(How = How.CssSelector, Using = "#form-review .alert-danger")]
         public IWebElement charactersAlert { get; set; }
+
+
+        //Add Product to Cart Completion Form Elements
+        [FindsBy(How = How.CssSelector, Using = "input[name=\"option[218]\"][value=\"6\"]")]
+        public IWebElement chooseDimensionInput { get; set; } 
+                                                
+        [FindsBy(How = How.CssSelector, Using = "input[name=\"option[223][]\"][value=\"9\"]")]
+        public IWebElement chooseCheckBoxInput { get; set; } 
+
+        [FindsBy(How = How.Id, Using = "input-option217")] 
+        public IWebElement chooseColorInput { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//*[@id=\"input-option217\"]/option[3]")]
+        public IWebElement chooseBlueColor { get; set; }
+
+        [FindsBy(How = How.Id, Using = "input-option209")]
+        public IWebElement textareaInput { get; set; }
+
+        [FindsBy(How = How.Id, Using = "button-upload222")] 
+        public IWebElement btnUploadFile { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = ".alert.alert-success")]
+        public IWebElement successAlertProdAdded { get; set; } 
 
 
 
@@ -112,6 +132,61 @@ namespace OpencartPages.Pages
         public void clickReviewButton()
         {
             btnReview.Click();
+        }
+
+        //Products click methods
+
+        public void ClickOnSamsungMonitor() 
+        {
+            txtMonitorsSamsungTitle.Click();
+        }
+
+        public void ClickOnAppleMonitor() 
+        {
+            txtMonitorsAppleTitle.Click();
+        }
+
+
+        //Add Product to Cart Completion Form Methods
+
+        public void ChooseDimensionClick()
+        {
+            chooseDimensionInput.Click();
+        }
+
+        public void ChooseCheckBoxClick()
+        {
+            chooseCheckBoxInput.Click();
+        }
+
+        public void ChooseColorClick()
+        {
+            chooseColorInput.Click();
+        }
+
+        public void ChooseBlueColorClick() 
+        {
+            chooseBlueColor.Click();
+        }
+
+        public void TextareaInputTyping()
+        { 
+            textareaInput.SendKeys("I want to by this product");
+        }
+
+        public void UploadImageFile()
+        {
+            btnUploadFile.SendKeys(@"C:\Users\ovidi\OneDrive\Desktop\IdentityCardCapture.bmp");
+        }
+
+        public void FillForm()
+        {
+            ChooseDimensionClick();
+            ChooseCheckBoxClick();
+            ChooseColorClick();
+            ChooseBlueColorClick();
+            TextareaInputTyping();
+            UploadImageFile();
         }
     }
 }

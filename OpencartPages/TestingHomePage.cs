@@ -78,7 +78,7 @@ namespace OpencartPages
         public void VerifEmptyCart() 
         {
             HomePage homePage = new HomePage(browser);
-            homePage.ClickOnEmptyCart();
+            homePage.ClickOnYourCart(); 
            
             var emptyCartMsg = homePage.txtEmptyCart.Text;
             Assert.AreEqual(emptyCartMsg, "Your shopping cart is empty!");

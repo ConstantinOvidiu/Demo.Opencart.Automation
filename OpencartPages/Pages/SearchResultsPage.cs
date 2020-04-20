@@ -19,7 +19,7 @@ namespace OpencartPages.Pages
         public IWebElement txtProductTitle { get; set; }
 
         [FindsBy(How = How.CssSelector, Using = ".product-layout button:nth-child(1)")]
-        private IWebElement btnAddToCart { get; set; }
+        private IWebElement btnAddToCart { get; set; } 
 
         [FindsBy(How = How.XPath, Using = "//*[@id=\"content\"]/p[2]")]
         public IWebElement txtNoItemsReturned { get; set; }
