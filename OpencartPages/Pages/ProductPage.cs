@@ -63,27 +63,33 @@ namespace OpencartPages.Pages
 
 
         //Add Product to Cart Completion Form Elements
-        [FindsBy(How = How.CssSelector, Using = "input[name=\"option[218]\"][value=\"6\"]")]
-        public IWebElement chooseDimensionInput { get; set; } 
                                                 
-        [FindsBy(How = How.CssSelector, Using = "input[name=\"option[223][]\"][value=\"9\"]")]
+        [FindsBy(How = How.CssSelector, Using = "input[name=\"option[223][]\"][value=\"10\"]")]
         public IWebElement chooseCheckBoxInput { get; set; } 
 
         [FindsBy(How = How.Id, Using = "input-option217")] 
         public IWebElement chooseColorInput { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"input-option217\"]/option[3]")]
+        [FindsBy(How = How.XPath, Using = "//*[@id=\"input-option217\"]/option[2]")]
         public IWebElement chooseBlueColor { get; set; }
 
         [FindsBy(How = How.Id, Using = "input-option209")]
         public IWebElement textareaInput { get; set; }
 
-        [FindsBy(How = How.Id, Using = "button-upload222")] 
-        public IWebElement btnUploadFile { get; set; }
+        [FindsBy(How = How.XPath, Using = "//*[@id=\"product\"]/div[1]/div[2]")]
+        public IWebElement AlertRadioRequired { get; set; }
 
-        [FindsBy(How = How.CssSelector, Using = ".alert.alert-success")]
-        public IWebElement successAlertProdAdded { get; set; } 
+        [FindsBy(How = How.XPath, Using = "//*[@id=\"product\"]/div[6]/div")]
+        public IWebElement AlertFileRequired { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//*[@id=\"product\"]/div[2]/div[2]")]
+        public IWebElement AlertCheckboxRequired { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//*[@id=\"product\"]/div[4]/div")]
+        public IWebElement AlertSelectRequired { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//*[@id=\"product\"]/div[5]/div")]
+        public IWebElement AlertTextareaRequired { get; set; } 
 
 
         public void productResultClick()
@@ -149,11 +155,6 @@ namespace OpencartPages.Pages
 
         //Add Product to Cart Completion Form Methods
 
-        public void ChooseDimensionClick()
-        {
-            chooseDimensionInput.Click();
-        }
-
         public void ChooseCheckBoxClick()
         {
             chooseCheckBoxInput.Click();
@@ -174,19 +175,25 @@ namespace OpencartPages.Pages
             textareaInput.SendKeys("I want to by this product");
         }
 
-        public void UploadImageFile()
+        public void OpenSamsungMonitor()
         {
-            btnUploadFile.SendKeys(@"C:\Users\ovidi\OneDrive\Desktop\IdentityCardCapture.bmp");
+            ClickOnComponents();
+            ClickOnMonitors();
+            ClickOnSamsungMonitor();
+        }
+        public void OpenAppleMonitor()
+        {
+            ClickOnComponents();
+            ClickOnMonitors();
+            ClickOnAppleMonitor();
         }
 
         public void FillForm()
         {
-            ChooseDimensionClick();
             ChooseCheckBoxClick();
             ChooseColorClick();
             ChooseBlueColorClick();
-            TextareaInputTyping();
-            UploadImageFile();
+            TextareaInputTyping();   
         }
     }
 }

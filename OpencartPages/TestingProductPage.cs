@@ -58,10 +58,8 @@ namespace OpencartPages
         [TestMethod]
         public void VerifyCurrencyPound()
         {
-
             ProductPage productPage = new ProductPage(browser);
             productPage.SearchForItem("iPhone");
-
             productPage.productResultClick();
             productPage.CurrencyClick();
             productPage.PoundClick();
@@ -77,12 +75,8 @@ namespace OpencartPages
         [TestMethod]
         public void WriteValidReview()
         {
-            //Very good product.I recommend
-            //to check " Thank you for your review. It has been submitted to the webmaster for approval."
             ProductPage productPage = new ProductPage(browser);
             productPage.SearchForItem("iPhone");
-
-
             productPage.productResultClick();
             productPage.TabReviewClick();
             productPage.WriteName("AslamAshishRmabadKumar");
@@ -99,12 +93,8 @@ namespace OpencartPages
         [TestMethod]
         public void WriteInvalidReviewRaiting()
         {
-            //Very good product.I recommend
-            //to check "Please select a review rating!"
             ProductPage productPage = new ProductPage(browser);
             productPage.SearchForItem("iPhone");
-
-
             productPage.productResultClick();
             productPage.TabReviewClick();
             productPage.WriteName("AslamAshishRmabadKumar");
@@ -120,12 +110,8 @@ namespace OpencartPages
         [TestMethod]
         public void WriteInvalidReviewName()
         {
-            //Very good product.I recommend
-            //to check "Please select a review rating!"
             ProductPage productPage = new ProductPage(browser);
             productPage.SearchForItem("iPhone");
-
-
             productPage.productResultClick();
             productPage.TabReviewClick();
             productPage.WriteReview("Very good product. I recommend");
@@ -141,12 +127,8 @@ namespace OpencartPages
         [TestMethod]
         public void WriteInvalidReviewcharacters()
         {
-            //Very good product.I recommend
-            //to check "Please select a review rating!"
             ProductPage productPage = new ProductPage(browser);
             productPage.SearchForItem("iPhone");
-
-
             productPage.productResultClick();
             productPage.TabReviewClick();
             productPage.WriteName("AslamAshishRmabadKumar");
@@ -163,9 +145,7 @@ namespace OpencartPages
         public void AddSimpleProdToCart()
         {
             ProductPage productPage = new ProductPage(browser);
-            productPage.ClickOnComponents();
-            productPage.ClickOnMonitors();
-            productPage.ClickOnSamsungMonitor(); 
+            productPage.OpenSamsungMonitor();
             productPage.ClickAddToCart();
             productPage.ClickOnYourCart();
 
@@ -176,34 +156,76 @@ namespace OpencartPages
 
         [TestMethod]
         public void AddProductToCartFormCompletionRequired() 
-        {
-            browser.Navigate().GoToUrl("http://opencart.abstracta.us/");
-
+        { 
             ProductPage productPage = new ProductPage(browser);
-            productPage.ClickOnComponents();
-            productPage.ClickOnMonitors();
-            productPage.ClickOnAppleMonitor();
-
-            //Select Available Options 
-            //Dimension Choices
+            productPage.OpenAppleMonitor();
             productPage.FillForm();
-
-            try
-            {         
-                Thread.Sleep(2000); 
-                browser.SwitchTo().Alert().Accept();
-            } catch { } 
-                
-            
-
             productPage.ClickAddToCart();
 
-            
-            var msgProductSuccessfullyAdded = productPage.successAlertProdAdded.Text;
+            var msgAlertRadioRequired = productPage.AlertRadioRequired.Text;
+            Assert.AreEqual(msgAlertRadioRequired, "Radio required!");
 
-            Assert.AreEqual(msgProductSuccessfullyAdded, "Success: You have added Apple Cinema 30\" to your shopping cart!");
+            var msgFileRequired = productPage.AlertFileRequired.Text;
+            Assert.AreEqual(msgFileRequired, "File required!"); 
+        }
 
+        [TestMethod]
+        public void CheckBoxUnchecked()  
+        {
+            ProductPage productPage = new ProductPage(browser);
+            productPage.OpenAppleMonitor();
+            productPage.ChooseColorClick();
+            productPage.ChooseBlueColorClick();
+            productPage.TextareaInputTyping();
+            productPage.ClickAddToCart();
 
+            var msgAlertRadioRequired = productPage.AlertRadioRequired.Text;
+            Assert.AreEqual(msgAlertRadioRequired, "Radio required!");
+
+            var msgFileRequired = productPage.AlertFileRequired.Text;
+            Assert.AreEqual(msgFileRequired, "File required!");
+
+            var msgCheckboxRequired = productPage.AlertCheckboxRequired.Text;
+            Assert.AreEqual(msgCheckboxRequired, "Checkbox required!"); 
+        }
+
+        [TestMethod]
+        public void ColorOptionUnchecked()
+        {
+            ProductPage productPage = new ProductPage(browser);
+            productPage.OpenAppleMonitor();
+            productPage.ChooseCheckBoxClick();
+            productPage.TextareaInputTyping();
+            productPage.ClickAddToCart(); 
+
+            var msgAlertRadioRequired = productPage.AlertRadioRequired.Text;
+            Assert.AreEqual(msgAlertRadioRequired, "Radio required!");
+
+            var msgFileRequired = productPage.AlertFileRequired.Text;
+            Assert.AreEqual(msgFileRequired, "File required!"); 
+
+            var msgSelectRequired = productPage.AlertSelectRequired.Text;
+            Assert.AreEqual(msgSelectRequired, "Select required!");
+        }
+
+        [TestMethod]
+        public void TextareaUnchecked()  
+        {
+            ProductPage productPage = new ProductPage(browser);
+            productPage.OpenAppleMonitor();
+            productPage.ChooseCheckBoxClick();
+            productPage.ChooseColorClick();
+            productPage.ChooseBlueColorClick();
+            productPage.ClickAddToCart();
+
+            var msgAlertRadioRequired = productPage.AlertRadioRequired.Text;
+            Assert.AreEqual(msgAlertRadioRequired, "Radio required!");
+
+            var msgFileRequired = productPage.AlertFileRequired.Text;
+            Assert.AreEqual(msgFileRequired, "File required!");
+
+            var msgTextareaRequired = productPage.AlertTextareaRequired.Text;
+            Assert.AreEqual(msgTextareaRequired, "Textarea required!");
         }
     }
 }
