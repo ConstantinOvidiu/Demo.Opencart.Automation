@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OpencartPages.Pages
+namespace OpencartPages.Pages 
 {
-    public class GenericPage
+    public class GenericPage 
 
     {
         //Search box Elements
@@ -37,8 +37,11 @@ namespace OpencartPages.Pages
         [FindsBy(How = How.Id, Using = "cart")]
         public IWebElement btnCart { get; set; }
 
-        [FindsBy(How = How.CssSelector, Using = "#cart ul li .text-center")]
+        [FindsBy(How = How.XPath, Using = "//*[@id=\"cart\"]/ul/li/p")]
         public IWebElement txtEmptyCart { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//*[@id=\"cart\"]/ul/li[1]/table/tbody/tr/td[5]/button/i")]
+        public IWebElement BtnRemoveFromCart { get; set; }
 
 
         //NAVBAR
@@ -124,6 +127,13 @@ namespace OpencartPages.Pages
         //Add to Cart Button
         [FindsBy(How = How.Id, Using = "button-cart")]
         public IWebElement addToCartBtn { get; set; }
+
+
+        //Remove from Cart Method
+        public void RemoveFromCart()
+        {
+            BtnRemoveFromCart.Click();
+        }
 
         //Search box Methods
         public void SearchForItem(string text)

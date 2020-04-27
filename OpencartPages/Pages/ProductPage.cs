@@ -89,8 +89,9 @@ namespace OpencartPages.Pages
         public IWebElement AlertSelectRequired { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//*[@id=\"product\"]/div[5]/div")]
-        public IWebElement AlertTextareaRequired { get; set; } 
+        public IWebElement AlertTextareaRequired { get; set; }
 
+      
 
         public void productResultClick()
         {

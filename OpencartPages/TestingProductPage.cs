@@ -25,7 +25,7 @@ namespace OpencartPages
             browser.Navigate().GoToUrl("https://demo.opencart.com/");
 
             //Implicit wait
-            browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+            browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(40);
         }
 
         [TestCleanup]
@@ -226,6 +226,27 @@ namespace OpencartPages
 
             var msgTextareaRequired = productPage.AlertTextareaRequired.Text;
             Assert.AreEqual(msgTextareaRequired, "Textarea required!");
+        }
+
+        [TestMethod]
+        public void AddProductToCartAndRemove() 
+        {
+            ProductPage productPage = new ProductPage(browser);
+            productPage.OpenSamsungMonitor();
+            productPage.ClickAddToCart();
+            productPage.ClickOnYourCart();
+
+            var checkMonitorsProdTitle = productPage.txtMonitorsSamsungTitle.Text; 
+            Assert.AreEqual(checkMonitorsProdTitle, "Samsung SyncMaster 941BW");
+
+            productPage.RemoveFromCart();
+
+            browser.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(5);
+            productPage.ClickOnYourCart();
+
+            var isMyCartEmpty = productPage.btnCart.Text.Contains("1 item(s)");  
+            
+            Assert.IsFalse(isMyCartEmpty);  
         }
     }
 }
