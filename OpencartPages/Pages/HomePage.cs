@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-///TODO
+
 namespace OpencartPages.Pages
 {
     public class HomePage: GenericPage
@@ -25,8 +25,7 @@ namespace OpencartPages.Pages
         [FindsBy(How = How.CssSelector, Using = "#content h3")]
         public IWebElement txtFeatured { get; set; }
 
-        
-        
+
         //Methods
 
         public void ClickOnlinkMacBook()

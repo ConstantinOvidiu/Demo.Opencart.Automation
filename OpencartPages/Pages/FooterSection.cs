@@ -8,13 +8,14 @@ using System.Threading.Tasks;
 
 namespace OpencartPages.Pages
 {
-    public class LoginPage: GenericPage 
+    public class FooterSection : GenericPage
     {
-        public LoginPage(IWebDriver browser)  //LoginPage constructor
+        public FooterSection(IWebDriver browser)  
         {
             PageFactory.InitElements(browser, this);
         }
-
-        
     }
+
+
+    
 }

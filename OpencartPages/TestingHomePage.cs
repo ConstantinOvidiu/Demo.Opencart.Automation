@@ -82,6 +82,7 @@ namespace OpencartPages
            
             var emptyCartMsg = homePage.txtEmptyCart.Text;
             Assert.AreEqual(emptyCartMsg, "Your shopping cart is empty!");
-        }
+        }     
     }
 }
+
