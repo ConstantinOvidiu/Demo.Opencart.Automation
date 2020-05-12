@@ -91,7 +91,18 @@ namespace OpencartPages.Pages
         [FindsBy(How = How.XPath, Using = "//*[@id=\"product\"]/div[5]/div")]
         public IWebElement AlertTextareaRequired { get; set; }
 
-        
+        //Components Dropdown Elements
+
+        [FindsBy(How = How.LinkText, Using = "Samsung SyncMaster 941BW")]
+        public IWebElement txtMonitorsSamsungTitle { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "Apple Cinema 30\"")]
+        public IWebElement txtMonitorsAppleTitle { get; set; }
+
+        //Tablets Page Elements
+
+        [FindsBy(How = How.LinkText, Using = "Samsung Galaxy Tab 10.1")]
+        public IWebElement txtTabletsProdTitle { get; set; }
 
 
         public void productResultClick()

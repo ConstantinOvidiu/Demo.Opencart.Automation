@@ -14,7 +14,7 @@ namespace OpencartPages.Pages
         {
             PageFactory.InitElements(browser, this);
         }
-
         
+
     }
 }

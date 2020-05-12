@@ -12,6 +12,7 @@ namespace OpencartPages.Pages
 
     {
         //------------------ELEMENTS----------------------
+
         //LOGIN Pimary Elements
 
         [FindsBy(How = How.Name, Using = "email")]
@@ -28,7 +29,6 @@ namespace OpencartPages.Pages
 
         [FindsBy(How = How.ClassName, Using = "alert")]
         public IWebElement txtErrorMessage { get; set; }
-
 
 
         //Search box Elements
@@ -94,19 +94,11 @@ namespace OpencartPages.Pages
         [FindsBy(How = How.LinkText, Using = "Monitors (2)")]
         public IWebElement linkMonitors { get; set; }
 
-        [FindsBy(How = How.LinkText, Using = "Samsung SyncMaster 941BW")]
-        public IWebElement txtMonitorsSamsungTitle { get; set; }
-
-        [FindsBy(How = How.LinkText, Using = "Apple Cinema 30\"")]
-        public IWebElement txtMonitorsAppleTitle { get; set; } 
-
+       
 
         //Tablets Page Elements
         [FindsBy(How = How.LinkText, Using = "Tablets")]
         public IWebElement linkTablets { get; set; }
-
-        [FindsBy(How = How.LinkText, Using = "Samsung Galaxy Tab 10.1")]
-        public IWebElement txtTabletsProdTitle { get; set; }
 
 
         //Software Page Elements
@@ -128,9 +120,6 @@ namespace OpencartPages.Pages
         //Cameras Page Elements
         [FindsBy(How = How.LinkText, Using = "Cameras")]
         public IWebElement linkCameras { get; set; }
-
-        [FindsBy(How = How.LinkText, Using = "Nikon D300")]
-        public IWebElement txtCamerasProdTitle { get; set; }
 
 
         //MP3 Dropdown Elements
@@ -312,11 +301,12 @@ namespace OpencartPages.Pages
         [FindsBy(How = How.CssSelector, Using = "#account-account .alert-success")]
         public IWebElement SuccessMsgNewsletter { get; set; }
 
-        
+
 
 
 
         //------------------METHODS----------------------
+
         //LOGIN Pimary Methods
 
         public void Login()
@@ -332,7 +322,6 @@ namespace OpencartPages.Pages
             txtPassword.SendKeys(password);
             BtnLoginPrimary.Click();
         }
-
 
         //Remove from Cart Method
         public void RemoveFromCart()

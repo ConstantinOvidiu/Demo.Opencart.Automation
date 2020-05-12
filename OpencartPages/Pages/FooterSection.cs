@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OpencartPages.Pages
 {
-    public class FooterSection : GenericPage
+    public class FooterSection: GenericPage 
     {
         public FooterSection(IWebDriver browser)  
         {
