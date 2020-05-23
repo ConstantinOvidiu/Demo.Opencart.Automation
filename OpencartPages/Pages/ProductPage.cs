@@ -62,8 +62,13 @@ namespace OpencartPages.Pages
         public IWebElement charactersAlert { get; set; }
 
 
+        //Add to Cart Button
+        [FindsBy(How = How.Id, Using = "button-cart")]
+        public IWebElement addToCartBtn { get; set; }
+
+
         //Add Product to Cart Completion Form Elements
-                                                
+
         [FindsBy(How = How.CssSelector, Using = "input[name=\"option[223][]\"][value=\"10\"]")]
         public IWebElement chooseCheckBoxInput { get; set; } 
 
@@ -98,6 +103,16 @@ namespace OpencartPages.Pages
 
         [FindsBy(How = How.LinkText, Using = "Apple Cinema 30\"")]
         public IWebElement txtMonitorsAppleTitle { get; set; }
+
+
+
+
+        //Click Add to Cart
+        public void ClickAddToCart()
+        {
+            addToCartBtn.Click();
+        }
+
 
         //Tablets Page Elements
 

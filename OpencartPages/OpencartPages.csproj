@@ -56,19 +56,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\FooterSection.cs" />
+    <Compile Include="Pages\ContactUsPage.cs" />
     <Compile Include="Pages\GenericPage.cs" />
+    <Compile Include="Pages\GiftCertificatesPage.cs" />
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\NavbarPages.cs" />
     <Compile Include="Pages\ProductPage.cs" />
+    <Compile Include="Pages\ReturnsPage.cs" />
     <Compile Include="Pages\SearchResultsPage.cs" />
+    <Compile Include="TestingContactUsPage.cs" />
     <Compile Include="TestingFooterPages.cs" />
+    <Compile Include="TestingGiftCertificatesPage.cs" />
     <Compile Include="TestingHomePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestingLoginPage.cs" />
     <Compile Include="TestingNavbarPages.cs" />
     <Compile Include="TestingProductPage.cs" />
+    <Compile Include="TestingReturnsPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

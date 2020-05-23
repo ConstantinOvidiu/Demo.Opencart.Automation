@@ -13,24 +13,7 @@ namespace OpencartPages.Pages
     {
         //------------------ELEMENTS----------------------
 
-        //LOGIN Pimary Elements
-
-        [FindsBy(How = How.Name, Using = "email")]
-        private IWebElement txtEmail { get; set; }
-
-
-        [FindsBy(How = How.Name, Using = "password")]
-        private IWebElement txtPassword { get; set; }
-
-
-        [FindsBy(How = How.CssSelector, Using = "input.btn.btn-primary")]
-        private IWebElement BtnLoginPrimary { get; set; }
-
-
-        [FindsBy(How = How.ClassName, Using = "alert")]
-        public IWebElement txtErrorMessage { get; set; }
-
-
+        
         //Search box Elements
         [FindsBy(How = How.Name, Using = "search")]
         private IWebElement searchInput { get; set; }
@@ -133,13 +116,19 @@ namespace OpencartPages.Pages
         public IWebElement txtNoProductsToListMp3 { get; set; }
 
 
-        //Add to Cart Button
-        [FindsBy(How = How.Id, Using = "button-cart")]
-        public IWebElement addToCartBtn { get; set; }
-
-
 
         //Footer Elements
+
+
+        //Success Message
+        [FindsBy(How = How.CssSelector, Using = "#common-success .row #content p")]
+        public IWebElement SuccesMsgGeneric { get; set; }
+
+        //Alert Message
+        [FindsBy(How = How.ClassName, Using = "text-danger")]
+        public IWebElement AlertMsgForms { get; set; }
+
+
         //Information column
 
         [FindsBy(How = How.CssSelector, Using = "#content h1")]
@@ -158,64 +147,20 @@ namespace OpencartPages.Pages
         public IWebElement LinkTermsConditions { get; set; }
 
 
+
         //Customer Service column
         //Contact Us
+
 
         [FindsBy(How = How.LinkText, Using = "Contact Us")]
         public IWebElement LinkContactUs { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"input-name\"]")]
-        public IWebElement ContactUsNameField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"input-email\"]")]
-        public IWebElement ContactUsEmailField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"input-enquiry\"]")]
-        public IWebElement ContactUsEnquiryField { get; set; }
-                                           
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"content\"]/form/div/div/input")]
-        public IWebElement BtnSubmitContactUs { get; set; }
-
-        [FindsBy(How = How.ClassName, Using = "text-danger")]
-        public IWebElement AlertMsgForms { get; set; }  
-
-
+        
         //Returns page
         [FindsBy(How = How.LinkText, Using = "Returns")]
         public IWebElement LinkReturns { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"input-firstname\"]")]
-        public IWebElement ReturnsFirstNameField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"input-lastname\"]")]
-        public IWebElement ReturnsLastNameField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"input-email\"]")]
-        public IWebElement ReturnsEmailField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"input-telephone\"]")]
-        public IWebElement ReturnsTelephoneField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"input-order-id\"]")]
-        public IWebElement ReturnsOrderIdField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"input-product\"]")]
-        public IWebElement ReturnsProductNameField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"input-model\"]")]
-        public IWebElement ReturnsProductCodeField { get; set; }
-
-        [FindsBy(How = How.CssSelector, Using = "input[name=\"return_reason_id\"][value=\"1\"]")]
-        public IWebElement ReturnsResOfRet { get; set; }
-
-        [FindsBy(How = How.CssSelector, Using = "input[name=\"opened\"][value=\"1\"]")]                                    
-        public IWebElement ReturnsProdOpenedYes { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"content\"]/form/div/div[2]/input")]
-        public IWebElement BtnSubmitReturns { get; set; }
-
-        [FindsBy(How = How.CssSelector, Using = "#common-success .row #content p")]
-        public IWebElement SuccesMsgGeneric{ get; set; }
+       
 
         //Site Map
 
@@ -223,7 +168,7 @@ namespace OpencartPages.Pages
         public IWebElement LinkSiteMap { get; set; }
 
 
-        //Extras
+        //Extras column
         //Brands
 
         [FindsBy(How = How.LinkText, Using = "Brands")]
@@ -234,29 +179,6 @@ namespace OpencartPages.Pages
         [FindsBy(How = How.LinkText, Using = "Gift Certificates")]
         public IWebElement LinkGiftCertificates { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"input-to-name\"]")] 
-        public IWebElement GiftRecipientsNameField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"input-to-email\"]")]
-        public IWebElement GiftRecipientsEmailField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"input-from-name\"]")]
-        public IWebElement GiftYourNameField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"input-from-email\"]")]
-        public IWebElement GiftEmailField { get; set; }
-
-        [FindsBy(How = How.CssSelector, Using = "input[name=\"voucher_theme_id\"][value=\"7\"]")]
-        public IWebElement GiftCertThemeRadio { get; set; }
-
-        [FindsBy(How = How.CssSelector, Using = "input[name=\"agree\"][value=\"1\"]")] 
-        public IWebElement GiftAgreementCheckBox { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"content\"]/form/div[8]/div/input[2]")]
-        public IWebElement BtnSubmitGiftCert { get; set; }
-
-        [FindsBy(How = How.CssSelector, Using = ".alert.alert-danger.alert-dismissible")]
-        public IWebElement AlertAgreementCheckBox { get; set; }
 
         //Affiliate
 
@@ -270,6 +192,7 @@ namespace OpencartPages.Pages
 
         [FindsBy(How = How.CssSelector, Using = "#content h2")]
         public IWebElement GenericTitleHead2 { get; set; }
+
 
         //My Account column 
         //My Account
@@ -307,21 +230,6 @@ namespace OpencartPages.Pages
 
         //------------------METHODS----------------------
 
-        //LOGIN Pimary Methods
-
-        public void Login()
-        {
-            txtEmail.SendKeys("ovidiu.chiruta@gmail.com");
-            txtPassword.SendKeys("Parolanoua1234");
-            BtnLoginPrimary.Click();
-        }
-
-        public void Login(string username, string password)
-        {
-            txtEmail.SendKeys(username);
-            txtPassword.SendKeys(password);
-            BtnLoginPrimary.Click();
-        }
 
         //Remove from Cart Method
         public void RemoveFromCart()
@@ -436,12 +344,6 @@ namespace OpencartPages.Pages
         }
 
 
-        //Click Add to Cart
-        public void ClickAddToCart()
-        {
-            addToCartBtn.Click();
-        }
-
 
         //Footer Methods
         //Information column
@@ -461,217 +363,29 @@ namespace OpencartPages.Pages
             LinkPrivacyPolicy.Click();
         }
 
-        public void ClickTermsConditions()
+        public void ClickTermsConditions() 
         {
             LinkTermsConditions.Click();
         }
 
 
-        //Customer Service
+        //Customer Service column 
         //Contact Us page
 
-        public void ContactUsSubmitValidForm()
+        public void ClickLinkContactUs()
         {
-            LinkContactUs.Click();
-            ContactUsNameField.SendKeys("Ovidiu");
-            ContactUsEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            ContactUsEnquiryField.SendKeys("Hello! If I want to receive reward points how could I proceed? Thank you.");
-            BtnSubmitContactUs.Click(); 
-        }
-
-        public void ContactUsSubmitInvalidName()
-        {
-            LinkContactUs.Click();
-            ContactUsEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            ContactUsEnquiryField.SendKeys("Hello! If I want to receive reward points how could I proceed? Thank you.");
-            BtnSubmitContactUs.Click();
-        }
-
-        public void ContactUsSubmitInvalidEmail() 
-        {
-            LinkContactUs.Click();
-            ContactUsNameField.SendKeys("Ovidiu");
-            ContactUsEnquiryField.SendKeys("Hello! If I want to receive reward points how could I proceed? Thank you.");
-            BtnSubmitContactUs.Click();
-        }
-
-        public void ContactUsSubmitInvalidEnquiryText()
-        {
-            LinkContactUs.Click();
-            ContactUsNameField.SendKeys("Ovidiu");
-            ContactUsEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            ContactUsEnquiryField.SendKeys("Hello!");
-            BtnSubmitContactUs.Click();
-        }
-
-        public void ContactUsSubmitInvalidEnquiryEmpty() 
-        {
-            LinkContactUs.Click();
-            ContactUsNameField.SendKeys("Ovidiu");
-            ContactUsEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            BtnSubmitContactUs.Click();
+            LinkContactUs.Click();     
         }
 
 
         //Returns page
 
-        public void ReturnsSubmitValidForm()  
+        public void ClickLinkReturns()  
         {
-            LinkReturns.Click();
-            ReturnsFirstNameField.SendKeys("Ovidiu");
-            ReturnsLastNameField.SendKeys("Chiruta");
-            ReturnsEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            ReturnsTelephoneField.SendKeys("0741333444");
-            ReturnsOrderIdField.SendKeys("01");
-            ReturnsProductNameField.SendKeys("MacBook");
-            ReturnsProductCodeField.SendKeys("Product 16");
-            ReturnsResOfRet.Click();
-            ReturnsProdOpenedYes.Click();
-            BtnSubmitReturns.Click();
+            LinkReturns.Click();         
         }
 
-        public void ReturnsInvalidFormFirstName() 
-        {
-            LinkReturns.Click();
-            ReturnsLastNameField.SendKeys("Chiruta");
-            ReturnsEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            ReturnsTelephoneField.SendKeys("0741333444");
-            ReturnsOrderIdField.SendKeys("01");
-            ReturnsProductNameField.SendKeys("MacBook");
-            ReturnsProductCodeField.SendKeys("Product 16");
-            ReturnsResOfRet.Click();
-            ReturnsProdOpenedYes.Click();
-            BtnSubmitReturns.Click();
-        }
-
-        public void ReturnsInvalidFormLasttName()
-        {
-            LinkReturns.Click();
-            ReturnsFirstNameField.SendKeys("Ovidiu");
-            ReturnsEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            ReturnsTelephoneField.SendKeys("0741333444");
-            ReturnsOrderIdField.SendKeys("01");
-            ReturnsProductNameField.SendKeys("MacBook");
-            ReturnsProductCodeField.SendKeys("Product 16");
-            ReturnsResOfRet.Click();
-            ReturnsProdOpenedYes.Click();
-            BtnSubmitReturns.Click();
-        }
-
-        public void ReturnsInvalidFormEmail()
-        {
-            LinkReturns.Click();
-            ReturnsFirstNameField.SendKeys("Ovidiu");
-            ReturnsLastNameField.SendKeys("Chiruta");
-            ReturnsTelephoneField.SendKeys("0741333444");
-            ReturnsOrderIdField.SendKeys("01");
-            ReturnsProductNameField.SendKeys("MacBook");
-            ReturnsProductCodeField.SendKeys("Product 16");
-            ReturnsResOfRet.Click();
-            ReturnsProdOpenedYes.Click();
-            BtnSubmitReturns.Click();
-        }
-
-        public void ReturnsInvalidFormTelephone()
-        {
-            LinkReturns.Click();
-            ReturnsFirstNameField.SendKeys("Ovidiu");
-            ReturnsLastNameField.SendKeys("Chiruta");
-            ReturnsEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            ReturnsOrderIdField.SendKeys("01");
-            ReturnsProductNameField.SendKeys("MacBook");
-            ReturnsProductCodeField.SendKeys("Product 16");
-            ReturnsResOfRet.Click();
-            ReturnsProdOpenedYes.Click();
-            BtnSubmitReturns.Click();
-        }
-
-        public void ReturnsInvalidFormOrderID()
-        {
-            LinkReturns.Click();
-            ReturnsFirstNameField.SendKeys("Ovidiu");
-            ReturnsLastNameField.SendKeys("Chiruta");
-            ReturnsEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            ReturnsTelephoneField.SendKeys("0741333444");
-            ReturnsProductNameField.SendKeys("MacBook");
-            ReturnsProductCodeField.SendKeys("Product 16");
-            ReturnsResOfRet.Click();
-            ReturnsProdOpenedYes.Click();
-            BtnSubmitReturns.Click();
-        }
-
-        public void ReturnsInvalidFormProductName()
-        {
-            LinkReturns.Click();
-            ReturnsFirstNameField.SendKeys("Ovidiu");
-            ReturnsLastNameField.SendKeys("Chiruta");
-            ReturnsEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            ReturnsTelephoneField.SendKeys("0741333444");
-            ReturnsOrderIdField.SendKeys("01");
-            ReturnsProductCodeField.SendKeys("Product 16");
-            ReturnsResOfRet.Click();
-            ReturnsProdOpenedYes.Click();
-            BtnSubmitReturns.Click();
-        }
-
-        public void ReturnsInvalidFormProductCode()
-        {
-            LinkReturns.Click();
-            ReturnsFirstNameField.SendKeys("Ovidiu");
-            ReturnsLastNameField.SendKeys("Chiruta");
-            ReturnsEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            ReturnsTelephoneField.SendKeys("0741333444");
-            ReturnsOrderIdField.SendKeys("01");
-            ReturnsProductNameField.SendKeys("MacBook");
-            ReturnsResOfRet.Click();
-            ReturnsProdOpenedYes.Click();
-            BtnSubmitReturns.Click();
-        }
-
-        public void ReturnsInvalidFormReasOfRet()
-        {
-            LinkReturns.Click();
-            ReturnsFirstNameField.SendKeys("Ovidiu");
-            ReturnsLastNameField.SendKeys("Chiruta");
-            ReturnsEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            ReturnsTelephoneField.SendKeys("0741333444");
-            ReturnsOrderIdField.SendKeys("01");
-            ReturnsProductNameField.SendKeys("MacBook");
-            ReturnsProductCodeField.SendKeys("Product 16");
-            ReturnsProdOpenedYes.Click();
-            BtnSubmitReturns.Click();
-        }
-
-        public void OrderIdCheckValZero() 
-        {
-            LinkReturns.Click(); 
-            ReturnsFirstNameField.SendKeys("Ovidiu");
-            ReturnsLastNameField.SendKeys("Chiruta");
-            ReturnsEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            ReturnsTelephoneField.SendKeys("0741333444");
-            ReturnsOrderIdField.SendKeys("0");
-            ReturnsProductNameField.SendKeys("MacBook");
-            ReturnsProductCodeField.SendKeys("Product 16");
-            ReturnsResOfRet.Click();
-            ReturnsProdOpenedYes.Click();
-            BtnSubmitReturns.Click();
-        }
-
-        public void OrderIdCheckValZeroZero() 
-        {
-            LinkReturns.Click();
-            ReturnsFirstNameField.SendKeys("Ovidiu");
-            ReturnsLastNameField.SendKeys("Chiruta");
-            ReturnsEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            ReturnsTelephoneField.SendKeys("0741333444");
-            ReturnsOrderIdField.SendKeys("00");
-            ReturnsProductNameField.SendKeys("MacBook");
-            ReturnsProductCodeField.SendKeys("Product 16");
-            ReturnsResOfRet.Click();
-            ReturnsProdOpenedYes.Click();
-            BtnSubmitReturns.Click();
-        }
-
+       
         //Site Map 
 
         public void ClickLinkSiteMap() 
@@ -680,7 +394,7 @@ namespace OpencartPages.Pages
         }
 
         
-        //Extras
+        //Extras column
         //Brands
 
         public void ClickLinkBrandsPage()
@@ -690,90 +404,16 @@ namespace OpencartPages.Pages
 
         //Gift Certificates
 
-        public void GiftCertSubmitValidForm() 
+        public void ClickLinkGiftCertificates()
         {
             LinkGiftCertificates.Click();
-            GiftRecipientsNameField.SendKeys("My gifts");
-            GiftRecipientsEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            GiftYourNameField.SendKeys("Ovidiu");
-            GiftEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            GiftCertThemeRadio.Click();
-            GiftAgreementCheckBox.Click();
-            BtnSubmitGiftCert.Click();
         }
-
-        public void GiftCertInvalidFormRecipientsName() 
-        {
-            LinkGiftCertificates.Click();
-            GiftRecipientsEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            GiftYourNameField.SendKeys("Ovidiu");
-            GiftEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            GiftCertThemeRadio.Click();
-            GiftAgreementCheckBox.Click();
-            BtnSubmitGiftCert.Click();
-        }
-
-        public void GiftCertInvalidFormRecipientsEmail()
-        {
-            LinkGiftCertificates.Click();
-            GiftRecipientsNameField.SendKeys("My gifts");
-            GiftYourNameField.SendKeys("Ovidiu");
-            GiftEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            GiftCertThemeRadio.Click();
-            GiftAgreementCheckBox.Click();
-            BtnSubmitGiftCert.Click();
-        }
-
-        public void GiftCertInvalidFormName()
-        {
-            LinkGiftCertificates.Click();
-            GiftRecipientsNameField.SendKeys("My gifts");
-            GiftRecipientsEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            GiftEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            GiftCertThemeRadio.Click();
-            GiftAgreementCheckBox.Click();
-            BtnSubmitGiftCert.Click();
-        }
-
-        public void GiftCertInvalidEmail()
-        {
-            LinkGiftCertificates.Click();
-            GiftRecipientsNameField.SendKeys("My gifts");
-            GiftRecipientsEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            GiftYourNameField.SendKeys("Ovidiu");
-            GiftCertThemeRadio.Click();
-            GiftAgreementCheckBox.Click();
-            BtnSubmitGiftCert.Click();
-        }
-
-        public void GiftCertInvalidTheme()
-        {
-            LinkGiftCertificates.Click();
-            GiftRecipientsNameField.SendKeys("My gifts");
-            GiftRecipientsEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            GiftYourNameField.SendKeys("Ovidiu");
-            GiftEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            GiftAgreementCheckBox.Click();
-            BtnSubmitGiftCert.Click();
-        }
-
-        public void GiftCertInvalidAgrCheckBox() 
-        {
-            LinkGiftCertificates.Click();
-            GiftRecipientsNameField.SendKeys("My gifts");
-            GiftRecipientsEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            GiftYourNameField.SendKeys("Ovidiu");
-            GiftEmailField.SendKeys("ovidiu.chiruta@gmail.com");
-            GiftCertThemeRadio.Click();
-            BtnSubmitGiftCert.Click();
-        }
-
 
         //Affiliate
 
         public void ClickLinkAffiliatePage()
         {
-            LinkAffiliate.Click();
+            LinkAffiliate.Click(); 
         }
 
         //Specials
@@ -787,9 +427,9 @@ namespace OpencartPages.Pages
         //My Account column
         //My Account
 
-        public void ClickMyAccountsPage()
+        public void ClickMyAccountsPage() 
         {
-            LinkMyAccount.Click();
+            LinkMyAccount.Click(); 
         }
 
         //Order History
@@ -818,7 +458,6 @@ namespace OpencartPages.Pages
             NewsletterRadioNo.Click();
             BtnSubmitNewsletter.Click();
         }
-
     }
 }
 

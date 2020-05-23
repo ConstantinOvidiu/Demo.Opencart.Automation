@@ -14,7 +14,40 @@ namespace OpencartPages.Pages
         {
             PageFactory.InitElements(browser, this);
         }
-        
 
+        //LOGIN Pimary Elements
+
+        [FindsBy(How = How.Name, Using = "email")]
+        private IWebElement txtEmail { get; set; }
+
+
+        [FindsBy(How = How.Name, Using = "password")]
+        private IWebElement txtPassword { get; set; }
+
+
+        [FindsBy(How = How.CssSelector, Using = "input.btn.btn-primary")]
+        private IWebElement BtnLoginPrimary { get; set; }
+
+
+        [FindsBy(How = How.ClassName, Using = "alert")]
+        public IWebElement txtErrorMessage { get; set; }
+
+
+
+        //LOGIN Pimary Methods
+
+        public void Login()
+        {
+            txtEmail.SendKeys("ovidiu.chiruta@gmail.com");
+            txtPassword.SendKeys("Parolanoua1234");
+            BtnLoginPrimary.Click();
+        }
+
+        public void Login(string username, string password)
+        {
+            txtEmail.SendKeys(username);
+            txtPassword.SendKeys(password);
+            BtnLoginPrimary.Click();
+        }
     }
 }
