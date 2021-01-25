@@ -127,7 +127,7 @@ namespace OpencartPages
             homePage.ClickLinkAffiliatePage();
 
             var footerTitlePageNoContent = homePage.FooterTitlePageNoContent.Text;
-            Assert.AreEqual(footerTitlePageNoContent, "Affiliate Program");
+            Assert.AreEqual(footerTitlePageNoContent, "My Affiliate Account");
         }
 
         //Specials 

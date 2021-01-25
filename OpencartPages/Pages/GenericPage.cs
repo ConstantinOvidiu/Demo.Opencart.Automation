@@ -129,8 +129,10 @@ namespace OpencartPages.Pages
         public IWebElement AlertMsgForms { get; set; }
 
 
-        //Information column
+        //Information column 
 
+
+       //split the Elemenf for affiliate page
         [FindsBy(How = How.CssSelector, Using = "#content h1")]
         public IWebElement FooterTitlePageNoContent { get; set; } 
 
