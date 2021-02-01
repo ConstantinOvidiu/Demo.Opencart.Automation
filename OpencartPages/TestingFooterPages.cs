@@ -125,9 +125,11 @@ namespace OpencartPages
         {
             HomePage homePage = new HomePage(browser);
             homePage.ClickLinkAffiliatePage();
+      
+            homePage.ClickLinkAffiliateInfo();
 
             var footerTitlePageNoContent = homePage.FooterTitlePageNoContent.Text;
-            Assert.AreEqual(footerTitlePageNoContent, "My Affiliate Account");
+            Assert.AreEqual(footerTitlePageNoContent, "Your Affiliate Information");
         }
 
         //Specials 

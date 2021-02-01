@@ -132,7 +132,7 @@ namespace OpencartPages.Pages
         //Information column 
 
 
-       //split the Elemenf for affiliate page
+       //split the Element for affiliate page
         [FindsBy(How = How.CssSelector, Using = "#content h1")]
         public IWebElement FooterTitlePageNoContent { get; set; } 
 
@@ -186,6 +186,13 @@ namespace OpencartPages.Pages
 
         [FindsBy(How = How.LinkText, Using = "Affiliate")]
         public IWebElement LinkAffiliate { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "Edit your affiliate information")]
+        public IWebElement LinkAffiliateInfo { get; set; }
+
+
+
+
 
         //Specials
 
@@ -417,6 +424,12 @@ namespace OpencartPages.Pages
         {
             LinkAffiliate.Click(); 
         }
+
+        public void ClickLinkAffiliateInfo()
+        {
+            LinkAffiliateInfo.Click();
+        }
+
 
         //Specials
 
